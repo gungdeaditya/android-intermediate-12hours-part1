@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setRecyclerView() {
         list.layoutManager = LinearLayoutManager(this)
-        for (i in images.indices) {
+        for (i in 0..images.size - 1) {
             val social = Social(images[i], titles[i])
             socials.add(social)
         }
