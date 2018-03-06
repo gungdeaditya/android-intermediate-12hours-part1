@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.widget.Toast
 
 import com.example.gungde.intermediate12hours.adapter.ListAdapter
 import com.example.gungde.intermediate12hours.model.Social
@@ -24,7 +25,28 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        showToast("onCreate 2")
         setRecyclerView()
+    }
+
+
+    override fun onStart() {
+        super.onStart()
+        showToast("onStart 2")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        showToast("onStop 2")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        showToast("onDestroy 2")
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
     private fun setRecyclerView() {
